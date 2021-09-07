@@ -15,6 +15,18 @@ class Result {
     * The function accepts INTEGER_ARRAY arr as parameter.
     */
     public static void customSort(List<Integer> arr) {
+        if (arr.size() < 1 || arr.size() > 200000) {
+            System.out.println("Size of list must be between 1 and 200000");
+            return;
+        }
+
+        for (Integer i = 0; i < arr.size(); i++) {
+            if (arr.get(i) < 1 || arr.get(i) > 1000000) {
+                System.out.println("Numbers in list must be between 1 and 1000000");
+                return;
+            }
+        }
+
         Collections.sort(arr);
 
         List<List<Integer>> split_arr = new ArrayList<List<Integer>>();
